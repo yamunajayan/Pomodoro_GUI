@@ -1,3 +1,7 @@
+# POMODORO APP using in TKinter
+# To change the work and break times change the variables
+
+
 from tkinter import *
 import math
 
@@ -14,12 +18,11 @@ REPS = 0
 timer = None
 
 
-#-------------------- TO BRING WINOW TO FRONT ------------
+# -------------------- TO BRING WINOW TO FRONT ------------
 def bring_to_front(window):
     window.lift()
     window.attributes('-topmost', 1)
     window.attributes('-topmost', 0)
-
 
 
 # ---------------------------- TIMER RESET ------------------------------- #
@@ -31,8 +34,6 @@ def reset_timer():
     global REPS
     REPS = 0
 
-
-
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global REPS
@@ -40,11 +41,11 @@ def start_timer():
     REPS += 1
     print(REPS)
 
-    work_sec = WORK_MIN*60
-    short_break_sec = SHORT_BREAK_MIN*60
-    long_break_sec = LONG_BREAK_MIN*60
+    work_sec = WORK_MIN * 60
+    short_break_sec = SHORT_BREAK_MIN * 60
+    long_break_sec = LONG_BREAK_MIN * 60
 
-    if REPS %9 == 0:
+    if REPS % 9 == 0:
         reset_timer()
     elif REPS % 8 == 0:
         title_label.config(text="Break", fg=PINK)
@@ -105,6 +106,5 @@ reset_button.grid(column=2, row=2)
 
 check_marks = Label(fg=GREEN, bg=YELLOW, font=(FONT_NAME, 25, "bold"))
 check_marks.grid(column=1, row=3)
-
 
 window.mainloop()
